@@ -1,7 +1,8 @@
 import os
-from flask import Flask, render_template
+from flask import Flask, render_template, request
 
 app = Flask(__name__)
+app.config['SECRET_KEY'] = os.environ.get('SECRET_KEY', 'elra3y-elsaleh-secret-key')
 
 @app.route('/')
 def home():
@@ -15,9 +16,23 @@ def about():
 def services():
     return render_template('services.html')
 
-@app.route('/contact')
+@app.route('/contact', methods=['GET', 'POST'])
 def contact():
-    return render_template('contact.html')
+    success = False
+    error = None
+
+    if request.method == 'POST':
+        name = (request.form.get('name') or '').strip()
+        email = (request.form.get('email') or '').strip()
+        message = (request.form.get('message') or '').strip()
+
+        if not all([name, email, message]):
+            error = 'يرجى ملء جميع الحقول المطلوبة.'
+        else:
+            success = True
+            return render_template('contact.html', success=True, customer_name=name)
+
+    return render_template('contact.html', success=success, error=error)
 
 @app.route('/products')
 def products():

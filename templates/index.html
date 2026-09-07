@@ -1,31 +1,68 @@
 {% extends "base.html" %}
 
-{% block title %}الرئيسية - El Ra3y Elsaleh{% endblock %}
+{% block title %}الرئيسية - الراعي الصالح{% endblock %}
 
 {% block content %}
 <section class="hero">
-    <div class="hero-content">
-        <h1>أجهزة كهربائية عالية الجودة</h1>
-        <p>أفضل الأجهزة الكهربائية بأسعار منافسة وضمان شامل</p>
-        <a href="/products" class="cta-button">Get Started</a>
+    <div class="container hero-inner">
+        <div class="hero-copy">
+            <span class="eyebrow">أسلوب حياة فاخر</span>
+            <h1>أجهزة كهربائية فاخرة تعكس ذوقك وتوفر راحة يومك</h1>
+            <p>نوفر لك أفضل ماركات التبريد والمكيفات والغسالات مع خدمة ما بعد البيع المتميزة، وضمان شامل، وسعر ذكي يناسب أسلوب حياتك.</p>
+            <div class="hero-actions">
+                <a href="/products" class="cta-button primary">تصفح المنتجات</a>
+                <a href="/contact" class="cta-button secondary">تواصل معنا</a>
+            </div>
+            <div class="hero-metrics">
+                <div>
+                    <strong>+15</strong>
+                    <span>سنوات خبرة</span>
+                </div>
+                <div>
+                    <strong>5000+</strong>
+                    <span>عميل راضٍ</span>
+                </div>
+                <div>
+                    <strong>10Y</strong>
+                    <span>ضمان شامل</span>
+                </div>
+            </div>
+        </div>
+        <div class="hero-visual">
+            <div class="visual-card main-card">
+                <span class="chip">Premium Series</span>
+                <h3>Fresh Pro</h3>
+                <p>تبريد ذكي، تصميم أنيق، كفاءة عالية</p>
+            </div>
+            <div class="visual-card floating-card">
+                <span>توفير طاقة</span>
+                <strong>Up to 40%</strong>
+            </div>
+        </div>
     </div>
 </section>
 
 <section class="features">
     <div class="container">
-        <h2>لماذا تختارنا؟</h2>
+        <div class="section-heading">
+            <span>لماذا اخترنا</span>
+            <h2>جودة لا تشبهها المنافسة</h2>
+        </div>
         <div class="feature-grid">
             <div class="feature-card">
-                <h3>⚡ جودة عالية</h3>
-                <p>أجهزة كهربائية موثوقة من الماركات العالمية</p>
+                <div class="icon">⚡</div>
+                <h3>جودة عالمية</h3>
+                <p>منتجات من أفضل الماركات العالمية مع تقنيات حديثة وعالية الأداء.</p>
             </div>
             <div class="feature-card">
-                <h3>💰 أسعار تنافسية</h3>
-                <p>أفضل أسعار في السوق مع ضمان الجودة</p>
+                <div class="icon">💰</div>
+                <h3>أسعار مناسبة</h3>
+                <p>نقدم أسعار تنافسية مع ضمان جودة ومرونة في الاختيار.</p>
             </div>
             <div class="feature-card">
-                <h3>🛡️ ضمان شامل</h3>
-                <p>ضمان كامل وخدمة ما بعد البيع متميزة</p>
+                <div class="icon">🛡️</div>
+                <h3>ضمان شامل</h3>
+                <p>خدمة ما بعد البيع ودعم فني يضمن لك راحة البال بعد الشراء.</p>
             </div>
         </div>
     </div>
@@ -33,33 +70,30 @@
 
 <section class="brands">
     <div class="container">
-        <h2>العلامات التجارية المتوفرة</h2>
-        <p class="section-subtitle">أفضل الماركات العالمية للأجهزة الكهربائية</p>
+        <div class="section-heading center">
+            <span>الماركات المميزة</span>
+            <h2>اختيارات فاخرة تناسب كل بيت</h2>
+        </div>
         <div class="brands-grid">
             <div class="brand-card">
-                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Crect fill='%23D4AF37' width='300' height='300'/%3E%3Ctext x='50%25' y='50%25' font-size='24' text-anchor='middle' dy='.3em' fill='black' font-family='Arial'%3EFresh Refrigerator%3C/text%3E%3C/svg%3E" alt="تلاجات فريش Fresh" class="brand-image">
-                <h3>تلاجات فريش</h3>
-                <p>أجهزة تبريد عالية الكفاءة بتصاميم عصرية</p>
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Crect fill='%23d4af37' width='300' height='300'/%3E%3Ctext x='50%25' y='50%25' font-size='24' text-anchor='middle' dy='.3em' fill='black' font-family='Arial'%3EFresh%3C/text%3E%3C/svg%3E" alt="Fresh" class="brand-image">
+                <h3>فريش</h3>
+                <p>كفاءة عالية وتصميم أنيق يناسب العائلات الحديثة.</p>
             </div>
             <div class="brand-card">
-                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Crect fill='%23D4AF37' width='300' height='300'/%3E%3Ctext x='50%25' y='50%25' font-size='24' text-anchor='middle' dy='.3em' fill='black' font-family='Arial'%3ESharp Refrigerator%3C/text%3E%3C/svg%3E" alt="تلاجات شارب Sharp" class="brand-image">
-                <h3>تلاجات شارب</h3>
-                <p>تقنيات يابانية متقدمة للحفاظ على الطعام</p>
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Crect fill='%23d4af37' width='300' height='300'/%3E%3Ctext x='50%25' y='50%25' font-size='24' text-anchor='middle' dy='.3em' fill='black' font-family='Arial'%3ESharp%3C/text%3E%3C/svg%3E" alt="Sharp" class="brand-image">
+                <h3>شارب</h3>
+                <p>تكنولوجيا يابانية متقدمة مع جودة حفظ ممتازة.</p>
             </div>
             <div class="brand-card">
-                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Crect fill='%23D4AF37' width='300' height='300'/%3E%3Ctext x='50%25' y='50%25' font-size='24' text-anchor='middle' dy='.3em' fill='black' font-family='Arial'%3ETornado Refrigerator%3C/text%3E%3C/svg%3E" alt="تلاجات تورنيدو Tornado" class="brand-image">
-                <h3>تلاجات تورنيدو</h3>
-                <p>ثلاجات بتصاميم فاخرة وأداء عالي</p>
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Crect fill='%23d4af37' width='300' height='300'/%3E%3Ctext x='50%25' y='50%25' font-size='24' text-anchor='middle' dy='.3em' fill='black' font-family='Arial'%3ETornado%3C/text%3E%3C/svg%3E" alt="Tornado" class="brand-image">
+                <h3>تورنيدو</h3>
+                <p>أداء عالي، تصميم فخم، ومتانة تستحق الثقة.</p>
             </div>
             <div class="brand-card">
-                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Crect fill='%23D4AF37' width='300' height='300'/%3E%3Ctext x='50%25' y='50%25' font-size='24' text-anchor='middle' dy='.3em' fill='black' font-family='Arial'%3EMedia Refrigerator%3C/text%3E%3C/svg%3E" alt="ثلاجات ميديا Media" class="brand-image">
-                <h3>ثلاجات ميديا</h3>
-                <p>أجهزة موثوقة بضمان ممتد وخدمة مميزة</p>
-            </div>
-            <div class="brand-card">
-                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Crect fill='%23D4AF37' width='300' height='300'/%3E%3Ctext x='50%25' y='50%25' font-size='24' text-anchor='middle' dy='.3em' fill='black' font-family='Arial'%3EToshiba Media%3C/text%3E%3C/svg%3E" alt="ثلاجات توشيبا ميديا" class="brand-image">
-                <h3>ثلاجات توشيبا ميديا</h3>
-                <p>دمج بين الجودة اليابانية والسعر المناسب</p>
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Crect fill='%23d4af37' width='300' height='300'/%3E%3Ctext x='50%25' y='50%25' font-size='24' text-anchor='middle' dy='.3em' fill='black' font-family='Arial'%3EMedia%3C/text%3E%3C/svg%3E" alt="Media" class="brand-image">
+                <h3>ميديا</h3>
+                <p>حلول موثوقة بميزات ذكية وعناية متكاملة.</p>
             </div>
         </div>
     </div>
