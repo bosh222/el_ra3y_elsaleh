@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block title %}{{ category_label }} - {{ catalog.name }}{% endblock %}
+
+{% block content %}
+<section class="page-section">
+    <div class="container">
+        <a href="{{ url_for('brand_detail', brand=brand) }}" class="back-link">← {{ catalog.name }}</a>
+        <h1>{{ category_label }}</h1>
+        <div class="catalog-products-grid">
+            {% for item in products %}
+            <a class="catalog-product-card" href="{{ url_for('product_detail', brand=brand, product_id=item.id) }}">
+                <div class="catalog-product-image">
+                    <img src="{{ item.image if item.image.startswith('http') else url_for('static', filename=item.image.removeprefix('/static/')) }}" alt="{{ item.name }}" loading="lazy">
+                </div>
+                <h2>{{ item.name }}</h2>
+                {% if item.price %}<p class="catalog-product-price">{{ item.price }}</p>{% endif %}
+            </a>
+            {% endfor %}
+        </div>
+        {% if total_pages > 1 %}
+        <nav class="catalog-pagination" aria-label="صفحات المنتجات">
+            {% if page > 1 %}<a href="?page={{ page - 1 }}" aria-label="السابق">السابق</a>{% endif %}
+            <span>{{ page }} / {{ total_pages }}</span>
+            {% if page < total_pages %}<a href="?page={{ page + 1 }}" aria-label="التالي">التالي</a>{% endif %}
+        </nav>
+        {% endif %}
+    </div>
+</section>
+{% endblock %}

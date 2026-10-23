@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block title %}منتجات {{ catalog.name }} - الراعي الصالح{% endblock %}
+
+{% block content %}
+<section class="page-section">
+    <div class="container">
+        <a href="/products" class="back-link">← العودة للشركات</a>
+        <h1>{{ catalog.name }}</h1>
+        {% if catalog.note %}
+        <p class="catalog-note">{{ catalog.note }}</p>
+        {% endif %}
+
+        {% if product_count == 0 %}
+        <p class="catalog-note">لا توجد بيانات منتجات موثقة لهذه الشركة داخل الكتالوج المحلي حاليًا.</p>
+        {% else %}
+        <p class="catalog-count">{{ product_count }} منتجًا في الكتالوج</p>
+
+        <div class="category-grid">
+            {% for category in categories %}
+            <a class="category-link" href="{{ url_for('category_products', brand=brand, category_id=category.id) }}">
+                <span>{{ category.name }}</span>
+                <span class="category-count">{{ category.count }}</span>
+            </a>
+            {% endfor %}
+        </div>
+        {% endif %}
+    </div>
+</section>
+{% endblock %}
