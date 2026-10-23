@@ -9,13 +9,19 @@
         <h1>{{ category_label }}</h1>
         <div class="catalog-products-grid">
             {% for item in products %}
-            <a class="catalog-product-card" href="{{ url_for('product_detail', brand=brand, product_id=item.id) }}">
-                <div class="catalog-product-image">
-                    <img src="{{ item.image if item.image.startswith('http') else url_for('static', filename=item.image.removeprefix('/static/')) }}" alt="{{ item.name }}" loading="lazy">
-                </div>
-                <h2>{{ item.name }}</h2>
-                {% if item.price %}<p class="catalog-product-price">{{ item.price }}</p>{% endif %}
-            </a>
+            <article class="catalog-product-card">
+                <a class="catalog-product-main" href="{{ url_for('product_detail', brand=brand, product_id=item.id) }}">
+                    <div class="catalog-product-image">
+                        <img src="{{ item.image if item.image.startswith('http') else url_for('static', filename=item.image.removeprefix('/static/')) }}" alt="{{ item.name }}" loading="lazy">
+                    </div>
+                    <h2>{{ item.name }}</h2>
+                    {% if item.price %}<p class="catalog-product-price">{{ item.price }}</p>{% endif %}
+                </a>
+                <a class="product-whatsapp-button" href="https://wa.me/201282023711?text={{ ('عايز أطلب ' ~ item.name)|urlencode }}" target="_blank" rel="noopener noreferrer">
+                    <span aria-hidden="true">◉</span>
+                    <span>اطلب عبر واتساب</span>
+                </a>
+            </article>
             {% endfor %}
         </div>
         {% if total_pages > 1 %}
